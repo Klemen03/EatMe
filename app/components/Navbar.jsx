@@ -14,7 +14,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="flex flex-row items-center justify-between py-4 border-b-2">
+    <nav className="flex flex-row items-center justify-between py-4 border-b-2 tracking-wider">
       <Logo />
       <div className="flex flex-row gap-1 items-center">
         {navbarItems.map((item) => (
