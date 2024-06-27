@@ -6,7 +6,6 @@ import Link from 'next/link';
 import { Search, ShoppingBasket } from 'lucide-react';
 import DarkModeBtn from './DarkModeBtn';
 import { Button } from '@/components/ui/button';
-import { usePathname } from 'next/navigation';
 
 const Navbar = () => {
   const [isActive, setIsActive] = useState('/');
