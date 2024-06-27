@@ -1,16 +1,21 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import Logo from './Logo';
 import Link from 'next/link';
 import { Search, ShoppingBasket } from 'lucide-react';
 import DarkModeBtn from './DarkModeBtn';
 import { Button } from '@/components/ui/button';
+import { usePathname } from 'next/navigation';
 
 const Navbar = () => {
+  const [isActive, setIsActive] = useState('/');
+
   const navbarItems = [
-    { label: 'Home' },
-    { label: 'Menu' },
-    { label: 'Mobile App' },
-    { label: 'Contact Us' },
+    { label: 'Home', path: '/' },
+    { label: 'Menu', path: '/menu' },
+    { label: 'Mobile App', path: '/mobileapp' },
+    { label: 'Contact Us', path: 'contact' },
   ];
 
   return (
@@ -18,7 +23,14 @@ const Navbar = () => {
       <Logo />
       <div className="flex flex-row gap-1 items-center">
         {navbarItems.map((item) => (
-          <Link href={'/'} key={item.label}>
+          <Link
+            className={
+              isActive === item.path ? 'border-b-2 border-yellow-500' : ''
+            }
+            onClick={() => setIsActive(item.path)}
+            href={item.path}
+            key={item.label}
+          >
             <Button className="text-xl" variant="ghost">
               {item.label}
             </Button>
@@ -32,7 +44,7 @@ const Navbar = () => {
         <Button variant="ghost">
           <ShoppingBasket />
         </Button>
-        <p>SIGN IN</p>
+        <Button>Sign In</Button>
         <DarkModeBtn />
       </div>
     </nav>
