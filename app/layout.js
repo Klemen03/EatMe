@@ -2,6 +2,7 @@ import { Jost } from 'next/font/google';
 import './globals.css';
 import Navbar from './components/Navbar';
 import { ThemeProvider } from './components/theme-provider';
+import Footer from './components/Footer';
 
 const jost = Jost({
   subsets: ['latin'],
@@ -26,6 +27,7 @@ export default function RootLayout({ children }) {
         >
           <Navbar />
           {children}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

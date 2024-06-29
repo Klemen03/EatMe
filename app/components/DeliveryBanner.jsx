@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 const DeliveryBanner = () => {
   return (
-    <div className="flex flex-col lg:flex-row items-center mx-auto justify-center max-w-7xl gap-10 mt-20">
+    <div className="flex flex-col lg:flex-row items-center mx-auto justify-center max-w-7xl gap-10 mt-40 pb-80">
       <div className="mx-2">
         <Image
           src="/deliverybanner.png"
